@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+
+.photo-container {
+  border: 1px solid black;
+  position: relative;
+}
+
+.tag {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 5px solid black;
+}
