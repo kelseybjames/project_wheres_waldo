@@ -28,7 +28,14 @@
 }
 
 .tag-name {
+  width: 50px;
+  height: 20px;
+  background-color: black;
+  color: white;
   position: absolute;
+  text-align: center;
+  top: 40px;
+  left: -5px;
 }
 
 .hidden {
@@ -51,3 +58,4 @@
 .list-content {
   display: inline;
 }
+
