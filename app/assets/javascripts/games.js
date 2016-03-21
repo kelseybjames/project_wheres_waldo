@@ -30,12 +30,24 @@ var mouseTracker = (function($){
       var $name = $('<div class="tag-name">' + $(this).html() + '</div>');
       $newTag.append($name);
       $('.photo-container').append($newTag);
+
+      var $list = $('.names-list');
+      $list.hide();
     } )
-  }
+  };
+
+  var imageHover = function() {
+    $(document).on('mouseenter', '.photo-container', function() {
+      $('.tag').show();
+    }).on('mouseleave', '.photo-container', function() {
+      $('.tag').hide();
+    });
+  };
 
   return {
     showTag: showTag,
-    clickName: clickName
+    clickName: clickName,
+    imageHover: imageHover
   }
 
 })($);
@@ -43,4 +55,5 @@ var mouseTracker = (function($){
 $(document).ready(function(){
   mouseTracker.showTag();
   mouseTracker.clickName();
+  mouseTracker.imageHover();
 });
