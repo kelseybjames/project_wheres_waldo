@@ -1,8 +1,11 @@
 var $tag = $('.notset');
-var $newTag = '<tag class="tag"></tag>';
+var $newTag = $('<tag class="tag"></tag>');
 $newTag.css($tag.position());
-console.log('new tag');
-console.log($newTag);
-var $name = $('<div class="tag-name">' + "<%= j(@tag.name) %>" + '</div>');
+var $tagName = $('<div class="tag-name">' + "<%= j(@tag.name) %>" + " <%= j(link_to('Delete', game_tag_path(@tag), method: :delete, confirm: 'Are you sure you want to delete this tag?', remote: true)) %>" + '</div>');
 $('.photo-container').append($newTag);
-$newTag.append($name);
+$newTag.append($tagName);
+
+var listName = '.<%= j(@tag.name) %>'.split(' ')[0];
+var $tag = $(listName);
+console.log($tag);
+$tag.remove();

@@ -13,7 +13,7 @@ class GamesController < ApplicationController
   end
 
   def show
-
+    @game = Game.first
   end
 
   private

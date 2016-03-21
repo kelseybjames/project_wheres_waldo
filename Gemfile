@@ -33,6 +33,8 @@ gem 'paperclip', '~> 4.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jazz_hands', '0.5.2', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

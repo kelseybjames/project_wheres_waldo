@@ -3,15 +3,15 @@
     <%= image_tag('waldo.jpg', class: 'img-responsive') %>
   </div>
  
-  <div class='score'></div>
+  <div class='score'><%= @game.score %></div>
 
   <div class='names-list'>
     <ul class="list-content">
-      <li><%= link_to 'Waldo', game_tags_path(tag: {name: 'Waldo'}), method: :post, remote: true, class: 'stop-prop' %></li>
-      <li><%= link_to 'Wenda', game_tags_path(tag: {name: 'Wenda'}), method: :post, remote: true, class: 'stop-prop' %></li>
-      <li><%= link_to 'Odlaw', game_tags_path(tag: {name: 'Odlaw'}), method: :post, remote: true, class: 'stop-prop' %></li>
-      <li><%= link_to 'Wizard Whitebeard', game_tags_path(tag: {name: 'Wizard Whitebeard'}), method: :post, remote: true, class: 'stop-prop' %></li>
-      <li><%= link_to 'Woof', game_tags_path(tag: {name: 'Woof'}), method: :post, remote: true, class: 'stop-prop' %></li>
+      <li><%= link_to 'Waldo', game_tags_path(tag: {name: 'Waldo'}), method: :post, class: 'stop-prop name Waldo' %></li>
+      <li><%= link_to 'Wenda', game_tags_path(tag: {name: 'Wenda'}), method: :post, class: 'stop-prop name Wenda' %></li>
+      <li><%= link_to 'Odlaw', game_tags_path(tag: {name: 'Odlaw'}), method: :post, class: 'stop-prop Odlaw' %></li>
+      <li><%= link_to 'Wizard Whitebeard', game_tags_path(tag: {name: 'Wizard Whitebeard'}), method: :post, class: 'stop-prop name Wizard' %></li>
+      <li><%= link_to 'Woof', game_tags_path(tag: {name: 'Woof'}), method: :post, class: 'stop-prop name Woof' %></li>
     </ul>
   </div>
 

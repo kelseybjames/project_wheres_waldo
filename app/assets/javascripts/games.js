@@ -26,7 +26,6 @@ WALDO.games = (function($){
       event.stopPropagation();
       var $newTag = $('<tag class="tag"></tag>')
       var $tag = $('.notset')
-      console.log($tag.position())
       $newTag.css($tag.position());
 
       var $name = $('<div class="tag-name">' + $(this).html() + '</div>');
@@ -40,10 +39,8 @@ WALDO.games = (function($){
 
   var imageHover = function() {
     $(document).on('mouseenter', '.photo-container', function() {
-      console.log('entering picture');
       $('.tag').show();
     }).on('mouseleave', '.photo-container', function() {
-      console.log('leaving picture');
       $('.tag').hide();
     });
   };
