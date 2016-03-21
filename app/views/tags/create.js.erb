@@ -1,0 +1,8 @@
+var $tag = $('.notset');
+var $newTag = '<tag class="tag"></tag>';
+$newTag.css($tag.position());
+console.log('new tag');
+console.log($newTag);
+var $name = $('<div class="tag-name">' + "<%= j(@tag.name) %>" + '</div>');
+$('.photo-container').append($newTag);
+$newTag.append($name);

@@ -19,6 +19,6 @@ class GamesController < ApplicationController
   private
 
   def whitelisted_params
-    params.require(game).permit()
+    params.require(:game).permit(:image)
   end
 end

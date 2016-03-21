@@ -1,4 +1,6 @@
-var mouseTracker = (function($){
+var WALDO = WALDO || {};
+
+WALDO.games = (function($){
 
   var showTag = function(){
     $('.photo-container').on('click', function(event){
@@ -9,7 +11,7 @@ var mouseTracker = (function($){
       
       var $tag = $('<div class="tag notset"></tag>');
 
-      console.log($tag);
+      console.log('clicked photo');
 
       $tag.css({top: y, left: x})
       $('.photo-container').append($tag);
@@ -38,8 +40,10 @@ var mouseTracker = (function($){
 
   var imageHover = function() {
     $(document).on('mouseenter', '.photo-container', function() {
+      console.log('entering picture');
       $('.tag').show();
     }).on('mouseleave', '.photo-container', function() {
+      console.log('leaving picture');
       $('.tag').hide();
     });
   };
@@ -53,7 +57,7 @@ var mouseTracker = (function($){
 })($);
 
 $(document).ready(function(){
-  mouseTracker.showTag();
-  mouseTracker.clickName();
-  mouseTracker.imageHover();
+  WALDO.games.showTag();
+  // WALDO.games.clickName();
+  WALDO.games.imageHover();
 });

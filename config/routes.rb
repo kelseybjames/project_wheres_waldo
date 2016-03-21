@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resource :games
-  root to: 'games#new'
+  resource :game do
+    resources :tags, only: [:create, :destroy]
+  end
+  root to: 'games#show'
 end
