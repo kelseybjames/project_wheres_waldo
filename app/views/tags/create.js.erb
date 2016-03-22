@@ -1,11 +1,12 @@
 var $tag = $('.notset');
 var $newTag = $('<tag class="tag"></tag>');
+var listName = '<%= j(@tag.name) %>'.split(' ')[0];
 $newTag.css($tag.position());
-var $tagName = $('<div class="tag-name">' + "<%= j(@tag.name) %>" + " <%= j(link_to('Delete', game_tag_path(@tag), method: :delete, confirm: 'Are you sure you want to delete this tag?', remote: true)) %>" + '</div>');
+var $tagName = $("<div class='tag-name'>" + "<%= j(@tag.name) %>" + " <%= j(link_to('Delete', game_tag_path(@tag), method: :delete, confirm: 'Are you sure you want to delete this tag?', remote: true)) %>" + '</div>');
+$tagName.addClass(listName);
 $('.photo-container').append($newTag);
 $newTag.append($tagName);
 
-var listName = '.<%= j(@tag.name) %>'.split(' ')[0];
-var $tag = $(listName);
+var $tag = $('li .' + listName);
 console.log($tag);
 $tag.remove();
