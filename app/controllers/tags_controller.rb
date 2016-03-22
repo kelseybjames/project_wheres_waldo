@@ -30,6 +30,6 @@ class TagsController < ApplicationController
 
   def whitelisted_params
     p params
-    params.require(:tag).permit(:name)
+    params.require(:tag).permit(:name, :x_coord, :y_coord)
   end
 end
